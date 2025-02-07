@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 //import button from "@/components/ui/button"
 import { Label } from "@/components/ui/label";
 import { auth, signIn } from "../utils/auth";
-import { SubmitButton } from "@/components/SubmitButtons";
+import { SubmitButton } from "../components/SubmitButtons";
 import { redirect } from "next/navigation";
 
 export default async function Login() {
