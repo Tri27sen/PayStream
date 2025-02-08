@@ -7,7 +7,7 @@ export async function requireUser() {
   console.log("inside the utils/hooks ...");
   console.log(session)
   if(!session?.user){
-    redirect("/ogin")
+    redirect("/login")
   }
   return session
 }

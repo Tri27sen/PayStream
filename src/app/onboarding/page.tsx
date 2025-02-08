@@ -14,7 +14,7 @@ import { useActionState } from "react";
 import { onboardUser } from "../actions";
 import { useForm } from "@conform-to/react";
 import { parseWithZod } from "@conform-to/zod";
-import { onboardingSchema } from "../utils/zodSchemas.ts";
+import { onboardingSchema } from "../utils/zodSchemas";
 
 export default function Onboarding() {
   const [lastResult, action] = useActionState(onboardUser, undefined);
@@ -83,8 +83,19 @@ export default function Onboarding() {
                 defaultValue={fields.address.initialValue}
                 placeholder="Chad street 123"
               />
+              <p className="text-red-500 text-sm">{fields.number.errors}</p>
+            </div>
+            <div className="grid gap-2">
+              <Label>Phone NUmber</Label>
+              <Input
+                name={fields.number.name}
+                key={fields.number.key}
+                defaultValue={fields.number.initialValue}
+                placeholder="91********"
+              />
               <p className="text-red-500 text-sm">{fields.address.errors}</p>
             </div>
+
 
             <SubmitButton text="Finish onboarding" />
           </form>

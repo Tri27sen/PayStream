@@ -1,10 +1,11 @@
 import {z} from "zod";
 
 
-export const onboardingSschema = z.object({
+export const onboardingSchema = z.object({
   firstName: z.string().min(2, "First name is required"),
   lastName: z.string().min(2, "Last name is required"),
-  number: z.number().min(2, "Phone Number is required"),
+  address: z.string().min(2, "Phone Number is required"),
+  number: z.string().min(2, "Phone Number is required"),
 })
 
 
