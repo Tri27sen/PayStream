@@ -5,7 +5,7 @@ export async function requireUser() {
   const session = await auth();
 
   console.log("inside the utils/hooks ...");
-  console.log(session)
+  //console.log(session)
   if(!session?.user){
     redirect("/login")
   }
