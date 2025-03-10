@@ -9,7 +9,7 @@ import { emailClient } from "./utils/mailtrap";
 import { formatCurrency } from "./utils/formatCurrency";
 //import { DashboardLinks } from "./components/DashboardLinks";
 
-export async function onboardUser(prevState: any, formData: FormData) {
+export async function onboardUser(prevState: unknown, formData: FormData) {
   const session = await requireUser();
 
   const submission = parseWithZod(formData, {
@@ -100,7 +100,7 @@ export async function createInvoice(prevState: any, formData: FormData) {
 
 export async function editInvoice(prevState: any, formData: FormData) {
   const session = await requireUser();
-
+  console.log("working with voice invoice ")
   const submission = parseWithZod(formData, {
     schema: invoiceSchema,
   });
@@ -143,7 +143,7 @@ export async function editInvoice(prevState: any, formData: FormData) {
   emailClient.send({
     from: sender,
     to: [{ email: "trishasengupta27@gmail.com" }],
-    template_uuid: "71b84dfe-c994-42eb-a22f-ebded2687eeb",
+    template_uuid: "cd3d06ac-4e51-48fc-b2d3-e4924b00cd10",
     template_variables: {
       clientName: submission.value.clientName,
       invoiceNumber: submission.value.invoiceNumber,
@@ -164,6 +164,10 @@ export async function editInvoice(prevState: any, formData: FormData) {
   return redirect("/dashboard/invoices");
 }
 
+
+
+
+
 export async function DeleteInvoice(invoiceId: string) {
   const session = await requireUser();
 
@@ -176,6 +180,10 @@ export async function DeleteInvoice(invoiceId: string) {
   console.log("the data on Dashboard invoices" , data )
   return redirect("/dashboard/invoices");
 }
+
+
+
+
 
 export async function MarkAsPaidAction(invoiceId: string) {
   const session = await requireUser();
