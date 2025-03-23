@@ -46,7 +46,6 @@ export function CreateInvoice({
   const [lastResult, action] = useActionState(createInvoice, undefined);
   const [form, fields] = useForm({
     lastResult,
-
     onValidate({ formData }) {
       return parseWithZod(formData, {
         schema: invoiceSchema,
