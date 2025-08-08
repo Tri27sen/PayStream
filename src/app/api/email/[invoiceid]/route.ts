@@ -16,7 +16,7 @@ export async function POST(
 
     const { invoiceid } = await params;
     console.log("the data is being resend  :>  ....")
-    //console.log(params)
+    console.log(params)
     const invoiceData = await prisma.invoice.findUnique({
       where: {
         id: invoiceid,
@@ -24,7 +24,7 @@ export async function POST(
       },
     });
     
-    //console.log("the invoiceData" , invoiceData )
+    console.log("the invoiceData" , invoiceData )
     if (!invoiceData) {
       return NextResponse.json({ error: "Invoice not found" }, { status: 404 });
     }
@@ -33,11 +33,13 @@ export async function POST(
       email: "hello@demomailtrap.com",
       name: "Trisha Sengupta",
     };
-
-    emailClient.send({
+// 2a4dd45c-4e48-49ef-84bc-2ef3953d6bd7
+//cd3d06ac-4e51-48fc-b2d3-e4924b00cd10
+//console.log(params)
+   await emailClient.send({
       from: sender,
       to: [{ email: "trishasengupta27@gmail.com" }],
-      template_uuid: "cd3d06ac-4e51-48fc-b2d3-e4924b00cd10",
+      template_uuid: "71b84dfe-c994-42eb-a22f-ebded2687eeb",
       template_variables: {
         clientName: invoiceData.fromName,
         invoiceNumber: invoiceData.invoiceNumber,

@@ -12,6 +12,7 @@ export async function GET(
   }
 ) {
   const { invoiceId } = await params;
+  console.log(params)
  // console.log(params);  --> this is a promise
   const data = await prisma.invoice.findUnique({
     where: {
