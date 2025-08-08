@@ -1,28 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+💼 Business Dashboard & Invoice App
+A full-stack business management dashboard built with Next.js, featuring:
 
-## Getting Started
+🔐 Authentication via Gmail (using Mailtrap)
 
-First, run the development server:
+📬 Email notifications to clients
 
-```
+📊 Interactive dashboard with revenue tracking
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+💱 Multiple currency support
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🧾 PDF invoice generation and download
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✅ Form validation using Zod
 
-## Learn More
+🚀 Features
+Authentication: Secure sign-in via Gmail using Mailtrap for development and testing.
 
-To learn more about Next.js, take a look at the following resources:
+Client Communication: Automatically send professional invoice emails to clients.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dashboard: Interactive charts and KPIs for real-time business insight.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Revenue Calculator: Dynamic tool to calculate income across different clients/projects.
 
-## Deploy on Vercel
+Multi-Currency Support: Generate invoices in your client’s preferred currency.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+PDF Invoicing: Create and download clean, print-ready invoices.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Form Validation: All forms are type-safe and validated with Zod.
+
+🛠️ Tech Stack
+Frontend: Next.js (React)
+
+Validation: Zod
+
+Email: Mailtrap
+
+Authentication: Gmail OAuth / SMTP
+
+PDF Generation: (e.g., react-pdf / pdf-lib)
+
+Styling: Tailwind CSS (or whatever you used)
+
+Database: Prisma (PostgreSQL / MySQL / SQLite)
+
+Hosting: Vercel / Railway / Render (you can specify)
+
+🖥️ Screenshots
+Dashboard	Invoice Generator
+
+Replace the paths with your actual images.
+
+📦 Installation
+bash
+Copy
+Edit
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+yarn install
+yarn dev
+🔐 Environment Variables
+Create a .env.local file in the root of your project:
+
+env
+Copy
+Edit
+DATABASE_URL=your_database_url
+NEXTAUTH_SECRET=your_secret
+NEXTAUTH_URL=http://localhost:3000
+EMAIL_SERVER=smtp.mailtrap.io
+EMAIL_PORT=2525
+EMAIL_USER=your_user
+EMAIL_PASSWORD=your_password
+📧 Mailtrap Setup (For Dev)
+Sign up at mailtrap.io
+
+Copy your SMTP credentials
+
+Paste them into your .env.local
+
+🧪 Development Notes
+Use yarn lint to check code quality.
+
+Run yarn build before production deployment.
+
+Prisma will auto-generate types after install via postinstall.
