@@ -1,28 +1,144 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# 📄 Invoice Management System
 
+A full-stack **Next.js Invoice Management Application** that allows authenticated users to **create, validate, generate, and send invoices as PDF files** via email.
+
+---
+
+## 🚀 Features
+
+* ✅ Email-based authentication using **NextAuth (Magic Link)**
+* ✅ Invoice creation with **Zod schema validation**
+* ✅ PDF invoice generation
+* ✅ Send invoices directly via email
+* ✅ PostgreSQL database using **Prisma ORM**
+* ✅ Secure server-side actions
+* ✅ Clean UI with reusable components
+
+---
+
+## 🏗 Tech Stack
+
+| Layer          | Technology                                                 |
+| -------------- | ---------------------------------------------------------- |
+| Frontend       | Next.js (App Router), React                                |
+| Styling        | Tailwind CSS                                               |
+| Authentication | NextAuth v5 (Nodemailer)                                   |
+| Email Service  | Mailtrap (development)                                     |
+| ORM            | Prisma                                                     |
+| Database       | PostgreSQL                                                 |
+| Validation     | Zod                                                        |
+| PDF Generation |  jsPDF 
+
+---
+
+## 🔐 Authentication Flow
+
+* Users authenticate using **magic email links**
+* No passwords required
+* Secure session handling using HTTP-only cookies
+* Auth state protected server-side using `auth()`
+
+---
+
+## 🧾 Invoice Workflow
+
+1. User logs in
+2. User fills invoice form
+3. Invoice data is validated with **Zod**
+4. Invoice is saved to database
+5. A **PDF invoice** is generated
+6. PDF is emailed to the client
+7. Invoice status is tracked (PAID / PENDING)
+
+---
+
+
+## 📤 Email + PDF Sending
+
+* Invoices are generated as **PDF files**
+* PDF is attached to email
+* Sent using **Nodemailer**
+* Mailtrap is used for development testing
+
+---
+
+## 🗄 Database Schema (Simplified)
+
+* **User** – Authenticated users
+* **Invoice** – Stores invoice details
+* **Session** – User sessions
+* **Account** – OAuth / email provider mapping
+
+---
+
+## 🛡 Security Measures
+
+* Server-only email sending
+* Zod input validation
+* No client-side secrets
+* Secure session cookies
+* Prisma ORM prevents SQL injection
+
+---
+
+## ⚙ Environment Variables
+
+Create a `.env` file:
+
+```env
+DATABASE_URL=postgresql://...
+EMAIL_SERVER_HOST=...
+EMAIL_SERVER_PORT=...
+EMAIL_SERVER_USER=...
+EMAIL_SERVER_PASSWORD=...
+EMAIL_FROM=...
+NEXTAUTH_SECRET=...
+NEXTAUTH_URL=http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Development Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Install dependencies
+npm install
 
-## Learn More
+# Run database migrations
+npx prisma migrate dev
 
-To learn more about Next.js, take a look at the following resources:
+# Start development server
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📌 Future Improvements
 
-## Deploy on Vercel
+* ✅ Payment gateway integration
+* ✅ Invoice reminders
+* ✅ Multi-currency support
+* ✅ Admin dashboard
+* ✅ PDF branding customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
+ring scalable Prisma models
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🙌 Acknowledgements
+
+* Next.js
+* Prisma
+* NextAuth
+* Zod
+
+---
+
+## 👩‍💻 Author
+
+**Trisha Sengupta**
+📧 Email-based Authentication | 📄 PDF Invoice Generation | ✅ Zod Validation
+
