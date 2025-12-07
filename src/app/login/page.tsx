@@ -28,7 +28,7 @@ export default async function Login() {
       <div className="flex h-screen w-full items-center justify-center px-4">
         <Card className="max-w-sm">
           <CardHeader>
-            <CardTitle className="text-2xl">Login</CardTitle>
+            <CardTitle className="text-2xl">LogIn</CardTitle>
             <CardDescription>
               Enter your email below to login in to your account
             </CardDescription>
@@ -49,12 +49,12 @@ export default async function Login() {
                   required
                   placeholder="hello@gmail.com"
                 />
-              </div>
-              <SubmitButton text="Login" />
+             </div>
+              <SubmitButton text="LogIn" />
             </form>
           </CardContent>
         </Card>
       </div>
     </>
   );
-}
+  }

@@ -8,7 +8,6 @@ export const onboardingSchema = z.object({
   number: z.string().min(2, "Phone Number is required"),
 })
 
-
 export const invoiceSchema = z.object({
   invoiceName: z.string().min(1, "Invoice Name is required"),
   total: z.number().min(1, "1$ is minimum"),
